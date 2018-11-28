@@ -1,0 +1,32 @@
+{
+  "name": "coins",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "coin": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "contractAddress": {
+      "type": "string"
+    },
+    "abi": {
+      "type": "string"
+    },
+    "decimal": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

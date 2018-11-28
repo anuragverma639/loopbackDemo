@@ -1,0 +1,31 @@
+{
+  "name": "balance",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "EURS": {
+      "type": "object"
+    },
+    "USDC": {
+      "type": "object"
+    },
+    "XRP": {
+      "type": "object"
+    },
+    "userId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

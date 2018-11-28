@@ -1,0 +1,47 @@
+{
+  "name": "withdraw",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "coin": {
+      "type": "string",
+      "required": true
+    },
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "updateeAt": {
+      "type": "date"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "txnHash":{
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
