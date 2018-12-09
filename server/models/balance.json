@@ -15,6 +15,9 @@
     "XRP": {
       "type": "object"
     },
+    "ETH": {
+      "type": "object"
+    },
     "userId": {
       "type": "string"
     }

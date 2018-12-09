@@ -88,6 +88,22 @@ const sendCoin = (coin, amount, address) => {
 				}).catch(e => {
 					reject(e)
 				})
+		} else if( coin == 'ETH'){
+			web3.eth.getTransactionCount(from, 'pending').then(function (count) {
+				var tx = {
+					from: from,
+					to: address,
+					gas: 21000,
+					nonce: count
+				};
+				web3.eth.accounts.signTransaction(tx, ethPrivateKey).then(signed => {
+					var tran = web3.eth.sendSignedTransaction(signed.rawTransaction);
+					tran.on('transactionHash', function (hash) {
+						resolve(hash);
+					});
+				});
+			});
+
 		}
 	})
 }

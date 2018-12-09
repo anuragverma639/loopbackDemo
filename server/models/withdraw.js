@@ -3,6 +3,7 @@
 let send = require('../utils/sendCoin');
 
 module.exports = function (Withdraw) {
+
   Withdraw.remoteMethod('withdrawCoin', {
     http: {
       verp: 'post',
@@ -21,11 +22,13 @@ module.exports = function (Withdraw) {
   });
 
   Withdraw.withdrawCoin = function (userId, coin, amount, address) {
+   // console.log(userId, coin, address);
     return new Promise(async (resolve, reject) => {
      // console.log("field ", userId, coin, amount, address)
       let updateBalance = await send.updateBalance(userId, coin, amount);
       if (updateBalance == true) {
         let hash = await send.sendCoin(coin, amount, address);
+       // console.log("hash ",hash);
         if (hash != null) {
           const data = {
             userId: userId,

@@ -14,7 +14,16 @@
     ]
   },
   "User": {
-    "dataSource": "mongoDs"
+    "dataSource": "mongoDs",
+    "public": true,
+    "options":{
+      "remoting":{
+        "sharedMethods":{
+          "*": false,
+          "create": true
+        }
+      }
+    }
   },
   "AccessToken": {
     "dataSource": "mongoDs",
@@ -37,7 +46,15 @@
   },
   "wallet": {
     "dataSource": "mongoDs",
-    "public": true
+    "public": true,
+    "options":{
+      "remoting":{
+        "sharedMethods":{
+          "*": false,
+          "createWallet": true
+        }
+      }
+    }
   },
   "coins": {
     "dataSource": "mongoDs",
@@ -49,6 +66,14 @@
   },
   "withdraw": {
     "dataSource": "mongoDs",
-    "public": true
+    "public": true,
+    "options":{
+      "remoting":{
+        "sharedMethods":{
+          "*": false,
+          "withdrawCoin": true
+        }
+      }
+    }
   }
 }
