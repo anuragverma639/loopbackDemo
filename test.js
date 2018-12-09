@@ -19,7 +19,7 @@ const payment = {
     },
     "destination": {
         "address": destination,
-        "tag": Number(747486),
+        "tag": Number(757422),
         "amount": {
             "value": amount,
             "currency": "XRP"

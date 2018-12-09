@@ -4,7 +4,7 @@ web3 = new Web3(new Web3.providers.HttpProvider("https://kovan.infura.io/OXT57RS
 let app = require('../../server/server');
 let Balance = app.models.balance;
 let Wallet = app.models.Wallet;
-let startBlock = 9637827;
+let startBlock = process.env.startBlock;
 
 async function getBlock() {
 	//console.log(startBlock);
